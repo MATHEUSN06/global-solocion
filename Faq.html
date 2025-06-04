@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prepare-se - Perguntas Frequentes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full backdrop-blur-lg bg-black/30 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-emerald-400 font-extrabold text-2xl tracking-wide hover:text-emerald-300">Prepare-se</a>
+      <ul class="hidden md:flex space-x-8 text-gray-300 font-semibold">
+        <li><a href="index.html#info" class="hover:text-emerald-400 transition">Informações</a></li>
+        <li><a href="index.html#checklist" class="hover:text-emerald-400 transition">Checklist</a></li>
+        <li><a href="index.html#quiz" class="hover:text-emerald-400 transition">Quiz</a></li>
+        <li><a href="contato.html" class="hover:text-emerald-400 transition">Contato</a></li>
+        <li><a href="faq.html" class="hover:text-emerald-400 transition">FAQ</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden text-emerald-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="menu" class="hidden md:hidden bg-black/70 backdrop-blur-lg px-6 py-4 space-y-4 text-center text-gray-300 font-semibold">
+      <a href="index.html#info" class="block hover:text-emerald-400 transition">Informações</a>
+      <a href="index.html#checklist" class="block hover:text-emerald-400 transition">Checklist</a>
+      <a href="index.html#quiz" class="block hover:text-emerald-400 transition">Quiz</a>
+      <a href="contato.html" class="block hover:text-emerald-400 transition">Contato</a>
+      <a href="faq.html" class="block hover:text-emerald-400 transition">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- FAQ -->
+  <section id="faq" class="min-h-screen flex items-center justify-center py-24 px-6 bg-[#162433]">
+    <div class="max-w-3xl mx-auto bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
+      <h2 class="text-3xl font-bold mb-10 text-center text-emerald-400">Perguntas Frequentes</h2>
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-emerald-400">O que fazer durante um terremoto?</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Durante um terremoto, siga o método "Abaixe-se, Proteja-se e Segure-se". Abaixe-se no chão, proteja-se sob uma mesa resistente e segure-se até o tremor parar. Evite correr para fora ou ficar perto de janelas.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-emerald-400">Como me preparar para uma inundação?</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Monte um kit de emergência com água, alimentos não perecíveis e documentos importantes. Eleve móveis e eletrodomésticos em áreas de risco e conheça as rotas de evacuação da sua região.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-emerald-400">O que fazer se um incêndio florestal se aproximar?</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Siga as ordens de evacuação das autoridades imediatamente. Feche todas as portas e janelas da casa para reduzir a entrada de fumaça e use uma máscara ou pano úmido para respirar. Dirija-se a uma área segura.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-emerald-400">Como se proteger durante um furacão?</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Reforce janelas com tábuas ou fitas adesivas e fique dentro de casa, longe de portas e janelas. Tenha um rádio a pilha para acompanhar os alertas e evite usar água ou eletricidade durante a tempestade.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-emerald-400">O que deve ter em um kit de emergência?</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Um kit de emergência deve incluir água potável (3 litros por pessoa por dia), alimentos não perecíveis, lanterna, pilhas, rádio, primeiros socorros, documentos pessoais e roupas extras.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Funcionalidade do menu mobile
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
