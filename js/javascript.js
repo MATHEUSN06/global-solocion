@@ -1,3 +1,10 @@
+// Funcionalidade do menu mobile
+document.getElementById('menu-btn').addEventListener('click', function() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('hidden');
+});
+
+// Funcionalidade do quiz
 document.getElementById('quiz-form').addEventListener('submit', function(event) {
   event.preventDefault();
 

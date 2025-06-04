@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prepare-se - Entre em Contato</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full backdrop-blur-lg bg-black/30 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-emerald-400 font-extrabold text-2xl tracking-wide hover:text-emerald-300">Prepare-se</a>
+      <ul class="hidden md:flex space-x-8 text-gray-300 font-semibold">
+        <li><a href="index.html#info" class="hover:text-emerald-400 transition">Informações</a></li>
+        <li><a href="index.html#checklist" class="hover:text-emerald-400 transition">Checklist</a></li>
+        <li><a href="index.html#quiz" class="hover:text-emerald-400 transition">Quiz</a></li>
+        <li><a href="contato.html" class="hover:text-emerald-400 transition">Contato</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden text-emerald-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="menu" class="hidden md:hidden bg-black/70 backdrop-blur-lg px-6 py-4 space-y-4 text-center text-gray-300 font-semibold">
+      <a href="index.html#info" class="block hover:text-emerald-400 transition">Informações</a>
+      <a href="index.html#checklist" class="block hover:text-emerald-400 transition">Checklist</a>
+      <a href="index.html#quiz" class="block hover:text-emerald-400 transition">Quiz</a>
+      <a href="contato.html" class="block hover:text-emerald-400 transition">Contato</a>
+    </div>
+  </nav>
+
+  <!-- Contato -->
+  <section id="contato" class="min-h-screen flex items-center justify-center py-24 px-6 bg-[#162433]">
+    <div class="max-w-3xl mx-auto bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
+      <h2 class="text-3xl font-bold mb-10 text-center text-emerald-400">Entre em Contato</h2>
+      <form id="contact-form" class="space-y-6">
+        <div>
+          <label for="nome" class="block text-gray-300 font-semibold mb-2">Nome</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            class="w-full bg-transparent border border-gray-500 text-gray-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="Digite seu nome"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-gray-300 font-semibold mb-2">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full bg-transparent border border-gray-500 text-gray-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="Digite seu e-mail"
+          />
+        </div>
+        <div>
+          <label for="telefone" class="block text-gray-300 font-semibold mb-2">Telefone</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            class="w-full bg-transparent border border-gray-500 text-gray-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="Digite seu telefone (opcional)"
+          />
+        </div>
+        <div>
+          <label for="mensagem" class="block text-gray-300 font-semibold mb-2">Mensagem</label>
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            required
+            class="w-full bg-transparent border border-gray-500 text-gray-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+            rows="5"
+            placeholder="Digite sua mensagem"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg py-3 shadow-lg transition transform hover:scale-105"
+        >
+          Enviar Mensagem
+        </button>
+      </form>
+      <div id="contact-result" class="mt-8 text-center text-lg font-semibold text-emerald-400"></div>
+    </div>
+  </section>
+
+  <script>
+    // Funcionalidade do menu mobile
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Funcionalidade do formulário de contato
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      if (nome && email && mensagem) {
+        const resultado = document.getElementById('contact-result');
+        resultado.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+        document.getElementById('contact-form').reset();
+      } else {
+        const resultado = document.getElementById('contact-result');
+        resultado.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+      }
+    });
+  </script>
+</body>
+</html>
