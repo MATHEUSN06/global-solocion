@@ -1,126 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR" >
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prepare-se - Proteção Contra Catástrofes</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e0e7ff;
-    }
-    .glass {
-      background: rgba(255 255 255 / 0.07);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255 255 255 / 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 1rem;
-    }
-    .glass:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(72, 240, 144, 0.4);
-      border-color: rgba(72, 240, 144, 0.6);
-    }
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0f172a;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #48f090;
-      border-radius: 4px;
-    }
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-    /* Barrinha colorida na pergunta */
-    .question-bar {
-      height: 5px;
-      width: 50px;
-      background-color: #48f090; /* Verde brilhante, combinando com a paleta */
-      border-radius: 2px;
-      margin-bottom: 8px;
-    }
-    /* Estilo do quiz */
-    .quiz-container {
-      max-width: 600px;
-      margin: auto;
-      padding: 2rem;
-      background: rgba(255 255 255 / 0.07);
-      border-radius: 1rem;
-      border: 1px solid rgba(255 255 255 / 0.15);
-      backdrop-filter: blur(14px);
-    }
-    .quiz-question {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #48f090;
-      margin-bottom: 0.5rem;
-    }
-    .quiz-options label {
-      display: block;
-      margin-bottom: 0.75rem;
-      cursor: pointer;
-      color: #cbd5e1; /* Cinza claro */
-      transition: color 0.2s;
-    }
-    .quiz-options input[type="radio"]:checked + label {
-      color: #34d399; /* Verde claro ao selecionar */
-      font-weight: 700;
-    }
-    .quiz-result {
-      margin-top: 1rem;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #a7f3d0;
-    }
-    .btn-submit {
-      background-color: #48f090;
-      color: #0f172a;
-      font-weight: 700;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-submit:hover {
-      background-color: #34d399;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Navbar -->
-<nav class="fixed top-0 left-0 w-full backdrop-blur-lg bg-black/30 z-50 shadow-lg">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <a href="#" class="text-emerald-400 font-extrabold text-2xl tracking-wide hover:text-emerald-300">Prepare-se</a>
-    <ul class="hidden md:flex space-x-8 text-gray-300 font-semibold">
-      <li><a href="#info" class="hover:text-emerald-400 transition">Informações</a></li>
-      <li><a href="#checklist" class="hover:text-emerald-400 transition">Checklist</a></li>
-      <li><a href="#quiz" class="hover:text-emerald-400 transition">Quiz</a></li>
-      <li><a href="#contato" class="hover:text-emerald-400 transition">Contato</a></li>
-    </ul>
-    <button id="menu-btn" class="md:hidden text-emerald-400 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
-      </svg>
-    </button>
-  </div>
-  <!-- Mobile Menu -->
-  <div id="menu" class="hidden md:hidden bg-black/70 backdrop-blur-lg px-6 py-4 space-y-4 text-center text-gray-300 font-semibold">
-    <a href="#info" class="block hover:text-emerald-400 transition">Informações</a>
-    <a href="#checklist" class="block hover:text-emerald-400 transition">Checklist</a>
-    <a href="#quiz" class="block hover:text-emerald-400 transition">Quiz</a>
-    <a href="#contato" class="block hover:text-emerald-400 transition">Contato</a>
-  </div>
-</nav>
-
+  <nav class="fixed top-0 left-0 w-full backdrop-blur-lg bg-black/30 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" class="text-emerald-400 font-extrabold text-2xl tracking-wide hover:text-emerald-300">Prepare-se</a>
+      <ul class="hidden md:flex space-x-8 text-gray-300 font-semibold">
+        <li><a href="#info" class="hover:text-emerald-400 transition">Informações</a></li>
+        <li><a href="#checklist" class="hover:text-emerald-400 transition">Checklist</a></li>
+        <li><a href="#quiz" class="hover:text-emerald-400 transition">Quiz</a></li>
+        <li><a href="#contato" class="hover:text-emerald-400 transition">Contato</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden text-emerald-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="menu" class="hidden md:hidden bg-black/70 backdrop-blur-lg px-6 py-4 space-y-4 text-center text-gray-300 font-semibold">
+      <a href="#info" class="block hover:text-emerald-400 transition">Informações</a>
+      <a href="#checklist" class="block hover:text-emerald-400 transition">Checklist</a>
+      <a href="#quiz" class="block hover:text-emerald-400 transition">Quiz</a>
+      <a href="#contato" class="block hover:text-emerald-400 transition">Contato</a>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
   <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-8 text-center md:text-left max-w-7xl mx-auto pt-24 md:pt-0">
@@ -143,31 +54,39 @@
 
   <!-- Informações Principais -->
   <section id="info" class="py-24 px-6 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold mb-12 text-center text-emerald-400">Informações Essenciais</h2>
-    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-      <div class="glass p-8">
-        <h3 class="text-2xl font-semibold mb-3">🧭 Planejamento</h3>
-        <p class="text-gray-300 leading-relaxed">
-          Defina rotas de fuga, pontos de encontro e mantenha tudo acessível.
+    <h2 class="text-4xl font-bold mb-12 text-center text-emerald-400">Catástrofes Naturais</h2>
+    <div class="space-y-8 max-w-3xl mx-auto">
+      <div class="bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
+        <img src="img/terremoto.jpg" alt="Destruição causada por terremoto na Turquia, 2023" class="w-full h-64 object-cover rounded-3xl mb-6" />
+        <h3 class="text-3xl font-bold mb-4 text-emerald-400 flex items-center gap-2">🌍 Terremotos</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Terremotos são tremores na crosta terrestre causados por movimentos tectônicos, podendo destruir edifícios e causar milhares de mortes. Em 2023, um sismo de magnitude 7,8 matou mais de 40 mil pessoas na Turquia e Síria.
         </p>
+        <p class="text-gray-400 text-sm">Destruição em Hatay, Turquia, após terremoto de 2023. Foto: AFP</p>
       </div>
-      <div class="glass p-8">
-        <h3 class="text-2xl font-semibold mb-3">🎒 Kit de Emergência</h3>
-        <p class="text-gray-300 leading-relaxed">
-          Tenha um kit com água, alimentos, lanternas e remédios prontos para uso.
+      <div class="bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
+        <img src="img/enche.png" alt="Inundação em Derna, Líbia, 2023" class="w-full h-64 object-cover rounded-3xl mb-6" />
+        <h3 class="text-3xl font-bold mb-4 text-emerald-400 flex items-center gap-2">🌊 Inundações</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Inundações ocorrem quando chuvas intensas ou rompimento de barragens inundam áreas urbanas e rurais, causando perdas humanas e materiais. Em 2023, a tempestade Daniel na Líbia causou milhares de mortes após romper barragens.
         </p>
+        <p class="text-gray-400 text-sm">Destruição em Derna, Líbia, após a tempestade Daniel, 2023. Foto: Anadolu Agency</p>
       </div>
-      <div class="glass p-8">
-        <h3 class="text-2xl font-semibold mb-3">📡 Comunicação</h3>
-        <p class="text-gray-300 leading-relaxed">
-          Use aplicativos confiáveis e mantenha baterias portáteis carregadas.
+      <div class="bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
+        <img src="img/incendio.png" alt="Incêndios florestais no Havaí, 2023" class="w-full h-64 object-cover rounded-3xl mb-6" />
+        <h3 class="text-3xl font-bold mb-4 text-emerald-400 flex items-center gap-2">🔥 Incêndios Florestais</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Incêndios florestais, intensificados por secas e calor extremo, destroem ecossistemas e comunidades. Em 2023, incêndios no Havaí devastaram áreas rurais, matando dezenas de pessoas.
         </p>
+        <p class="text-gray-400 text-sm">Incêndios florestais em Maui, Havaí, 2023. Foto: CNN</p>
       </div>
-      <div class="glass p-8">
-        <h3 class="text-2xl font-semibold mb-3">🩹 Primeiros Socorros</h3>
-        <p class="text-gray-300 leading-relaxed">
-          Saiba como lidar com cortes, fraturas e ferimentos até ajuda chegar.
+      <div class="bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
+        <img src="img/tornado.png" alt="Furacão Irma na Flórida, 2017" class="w-full h-64 object-cover rounded-3xl mb-6" />
+        <h3 class="text-3xl font-bold mb-4 text-emerald-400 flex items-center gap-2">🌀 Furacões</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Furacões são tempestades tropicais com ventos intensos, causando inundações e destruição. Eventos como o furacão Irma em 2017 e tempestades recentes no Atlântico destacam sua força devastadora.
         </p>
+        <p class="text-gray-400 text-sm">Destruição causada pelo furacão Irma na Flórida, 2017. Foto: CNN</p>
       </div>
     </div>
   </section>
@@ -204,93 +123,66 @@
   </section>
 
   <!-- Quiz -->
-  <!-- Quiz -->
-<section id="quiz" class="py-24 px-6 bg-[#162433]">
-  <div class="max-w-3xl mx-auto bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
-    <h2 class="text-3xl font-bold mb-8 text-center text-emerald-400">Quiz de Preparação Contra Catástrofes</h2>
+  <section id="quiz" class="py-24 px-6 bg-[#162433]">
+    <div class="max-w-3xl mx-auto bg-[#0f172a] rounded-3xl p-12 glass shadow-lg">
+      <h2 class="text-3xl font-bold mb-8 text-center text-emerald-400">Quiz de Preparação Contra Catástrofes</h2>
+      <form id="quiz-form" class="space-y-8">
+        <div>
+          <p class="text-gray-300 font-semibold mb-4">1. Qual item NÃO é essencial em um kit de emergência?</p>
+          <label class="block text-gray-300">
+            <input type="radio" name="q1" value="a" class="mr-2" />
+            Água potável
+          </label>
+          <label class="block text-gray-300">
+            <input type="radio" name="q1" value="b" class="mr-2" />
+            Remédios básicos
+          </label>
+          <label class="block text-gray-300">
+            <input type="radio" name="q1" value="c" class="mr-2" />
+            Joias de ouro
+          </label>
+        </div>
+        <div>
+          <p class="text-gray-300 font-semibold mb-4">2. Qual é o ponto principal para um plano de evacuação eficiente?</p>
+          <label class="block text-gray-300">
+            <input type="radio" name="q2" value="a" class="mr-2" />
+            Definir rotas de fuga e pontos de encontro
+          </label>
+          <label class="block text-gray-300">
+            <input type="radio" name="q2" value="b" class="mr-2" />
+            Escolher um lugar para guardar dinheiro
+          </label>
+          <label class="block text-gray-300">
+            <input type="radio" name="q2" value="c" class="mr-2" />
+            Comprar um telefone novo
+          </label>
+        </div>
+        <div>
+          <p class="text-gray-300 font-semibold mb-4">3. Qual ferramenta é útil para comunicação em emergências?</p>
+          <label class="block text-gray-300">
+            <input type="radio" name="q3" value="a" class="mr-2" />
+            Aplicativos confiáveis e baterias portáteis
+          </label>
+          <label class="block text-gray-300">
+            <input type="radio" name="q3" value="b" class="mr-2" />
+            Redes sociais de entretenimento
+          </label>
+          <label class="block text-gray-300">
+            <input type="radio" name="q3" value="c" class="mr-2" />
+            Jogos online
+          </label>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg py-3 shadow-lg transition transform hover:scale-105"
+        >
+          Enviar Respostas
+        </button>
+      </form>
+      <div id="quiz-result" class="mt-8 text-center text-lg font-semibold text-emerald-400"></div>
+    </div>
+  </section>
 
-    <form id="quiz-form" class="space-y-8">
-      <div>
-        <p class="text-gray-300 font-semibold mb-4">1. Qual item NÃO é essencial em um kit de emergência?</p>
-        <label class="block text-gray-300">
-          <input type="radio" name="q1" value="a" class="mr-2" />
-          Água potável
-        </label>
-        <label class="block text-gray-300">
-          <input type="radio" name="q1" value="b" class="mr-2" />
-          Remédios básicos
-        </label>
-        <label class="block text-gray-300">
-          <input type="radio" name="q1" value="c" class="mr-2" />
-          Joias de ouro
-        </label>
-      </div>
-
-      <div>
-        <p class="text-gray-300 font-semibold mb-4">2. Qual é o ponto principal para um plano de evacuação eficiente?</p>
-        <label class="block text-gray-300">
-          <input type="radio" name="q2" value="a" class="mr-2" />
-          Definir rotas de fuga e pontos de encontro
-        </label>
-        <label class="block text-gray-300">
-          <input type="radio" name="q2" value="b" class="mr-2" />
-          Escolher um lugar para guardar dinheiro
-        </label>
-        <label class="block text-gray-300">
-          <input type="radio" name="q2" value="c" class="mr-2" />
-          Comprar um telefone novo
-        </label>
-      </div>
-
-      <div>
-        <p class="text-gray-300 font-semibold mb-4">3. Qual ferramenta é útil para comunicação em emergências?</p>
-        <label class="block text-gray-300">
-          <input type="radio" name="q3" value="a" class="mr-2" />
-          Aplicativos confiáveis e baterias portáteis
-        </label>
-        <label class="block text-gray-300">
-          <input type="radio" name="q3" value="b" class="mr-2" />
-          Redes sociais de entretenimento
-        </label>
-        <label class="block text-gray-300">
-          <input type="radio" name="q3" value="c" class="mr-2" />
-          Jogos online
-        </label>
-      </div>
-
-      <button
-        type="submit"
-        class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg py-3 shadow-lg transition transform hover:scale-105"
-      >
-        Enviar Respostas
-      </button>
-    </form>
-
-    <div id="quiz-result" class="mt-8 text-center text-lg font-semibold text-emerald-400"></div>
-  </div>
-</section>
-
-<script>
-  document.getElementById('quiz-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const respostasCorretas = { q1: 'c', q2: 'a', q3: 'a' };
-    let pontuacao = 0;
-
-    for (const [pergunta, respostaCorreta] of Object.entries(respostasCorretas)) {
-      const respostaSelecionada = document.querySelector(`input[name="${pergunta}"]:checked`);
-      if (respostaSelecionada && respostaSelecionada.value === respostaCorreta) {
-        pontuacao++;
-      }
-    }
-
-    const resultado = document.getElementById('quiz-result');
-    if (pontuacao === Object.keys(respostasCorretas).length) {
-      resultado.textContent = `Parabéns! Você acertou todas as ${pontuacao} perguntas.`;
-    } else {
-      resultado.textContent = `Você acertou ${pontuacao} de ${Object.keys(respostasCorretas).length} perguntas. Tente novamente!`;
-    }
-  });
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
